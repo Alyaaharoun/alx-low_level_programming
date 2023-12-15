@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry function
+ * main - Entry point
  *
  * Deascribtion: A C language that prints with printf function
  *
@@ -11,5 +11,5 @@
 int main(void)
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
-  	return (0);
+	return (0);
 }
