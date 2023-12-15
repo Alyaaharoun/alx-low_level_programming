@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Deacription: A C proram that prints with puts function
+ * Description: A C proram that prints with puts function
  *
  * Return: Always 0 (success)
 */
