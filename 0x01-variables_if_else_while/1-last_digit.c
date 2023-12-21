@@ -5,10 +5,11 @@
 /**
  *main - Entry point
  *
- *Describtion: A C program that print with if-else
+ *Describtion: A C program that print last digit of number
  *
  *Return: Always 0 (success)
 */
+
 int main(void)
 {
 		int n, digit,
