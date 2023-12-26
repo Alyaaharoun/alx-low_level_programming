@@ -2,7 +2,7 @@
 /**
  * Main-Entry point
  *
- * Describtion: A C programme that print lowercse characters
+ * Describtion: A C programme that print lowercase characters
  *
  * Return: Always 0 (success)
 */
