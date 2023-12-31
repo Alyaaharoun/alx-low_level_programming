@@ -7,10 +7,10 @@
  *Return : Always 0 (success)
 */
 
-int main(_putchar)
+int main(void)
 {
 	printf("_putchar");
 	printf("\n");
 
-	return (_putchar);
+	return (0);
 }
