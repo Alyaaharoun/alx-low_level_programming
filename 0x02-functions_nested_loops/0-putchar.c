@@ -15,3 +15,6 @@ int main(void)
 
 	return (0);
 }
+/**
+ * Description: return value of main is 0 (success)
+*/
