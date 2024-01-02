@@ -3,17 +3,18 @@
 /**
  * main - Entry point
  *
- * _putchar - print string of character
+ * Describtion: function print string of character
  *
- * Return: character
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	char i;
-	
-	for (i = 1; i > 9; i++)
+	char str[] = "_putchar";
+	int i;
+
+	for (i = 0; i < 8; i++)
 	{
-		_putchar('i');
+		_putchar('str[]');
 	}
 	_putchar('\n');
 
