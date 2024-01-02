@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <main.h>
 /**
  * main - Entry point
  *
- * Description: A C program that print string
+ * Description: A C program that print _putchar
  *
  *Return : Always 0 (success)
 */
