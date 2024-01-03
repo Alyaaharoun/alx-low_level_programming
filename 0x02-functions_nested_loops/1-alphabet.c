@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * Print_alphabet - Entry point use the _putchar function
- *
- * Describtion: print the alphabet in lowercase
+ * print_alphabet - Entry point use the _putchar function
  *
  * Return: No return
 */
