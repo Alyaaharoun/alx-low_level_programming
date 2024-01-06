@@ -22,7 +22,7 @@ int _abs(int n)
 	}
 	else if (n < 0)
 	{
-		printf("%d\n", n * -1);
+		printf("%d\n", n * (-1));
 	}
 	return (0);
 }
