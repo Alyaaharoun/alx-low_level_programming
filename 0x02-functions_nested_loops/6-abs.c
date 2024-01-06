@@ -12,17 +12,7 @@
 int _abs(int n)
 {
 
-	if (n > 0)
-	{
-		printf("%d\n", n);
-	}
-	else if (n == 0)
-	{
-		printf("0\n");
-	}
-	else if (n < 0)
-	{
-		printf("%d\n", n * (-1));
-	}
-	return (0);
+	if (n < 0)
+		n = (-1) * n;
+	return (n);
 }
