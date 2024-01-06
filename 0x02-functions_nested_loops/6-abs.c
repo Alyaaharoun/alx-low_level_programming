@@ -13,22 +13,18 @@ int _abs(int n)
 {
 	int i;
 
-	i = n * -1;
 
 	if (n > 0)
 	{
-		_putchar(n);
-		_putchar('\n');
+		printf("%d\n", n);
 	}
 	else if (n == 0)
 	{
-		_putchar('0');
-		_putchar('\n');
+		printf("0\n");
 	}
 	else if (n < 0)
 	{
-		_putchar(i);
-		_putchar('\n');
+		printf("%d\n", n * -1);
 	}
 	return (0);
 }
