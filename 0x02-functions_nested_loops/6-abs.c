@@ -16,10 +16,19 @@ int _abs(int n)
 	i = n * -1;
 
 	if (n > 0)
+	{
 		_putchar(n);
+		_putchar('\n');
+	}
 	else if (n == 0)
+	{
 		_putchar('0');
+		_putchar('\n');
+	}
 	else if (n < 0)
+	{
 		_putchar(i);
+		_putchar('\n');
+	}
 	return (0);
 }
