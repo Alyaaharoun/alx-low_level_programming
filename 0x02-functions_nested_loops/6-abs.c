@@ -13,7 +13,7 @@ int _abs(int n)
 {
 	int i;
 
-	i = n * 1;
+	i = n * -1;
 
 	if (n > 0)
 		_putchar(n);
