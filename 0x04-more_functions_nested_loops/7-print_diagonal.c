@@ -5,7 +5,7 @@
  *
  * @n: parameter of function
  *
- * Return: always 0(success)
+ * Return: no return
  */
 
 void print_diagonal(int n)
@@ -21,7 +21,7 @@ void print_diagonal(int n)
 		{
 			for (s = 1; s <= i; s++)
 				_putchar(' ');
-			_putchr('92'); /*is equal to '/' char*/
+			_putchr(92);
 			_putchar('\n');
 		}
 	}
