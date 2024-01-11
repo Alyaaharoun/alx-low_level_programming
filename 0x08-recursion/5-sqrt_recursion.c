@@ -5,10 +5,12 @@
  *
  * @n: parameter of function
  *
+ * @v: parameter
+ *
  * Return: always 0(success)
  */
 
-int square(int n, int val);
+int square(int n, int v);
 int _sqrt_recursion(int n)
 {
 	return (square(n, 1));
@@ -16,17 +18,20 @@ int _sqrt_recursion(int n)
 
 /**
  * square - finction multi numbers
+ *
  * @n: first parameter
- * @val: second parameter
+ *
+ * @v: second parameter
+ *
  * Return: int
  */
 
-int square(int n, int val)
+int square(int n, int v)
 {
-	if (val * val == n)
-		return (val);
-	else if (val * val < n)
-		return (square(n, (val + 1)));
+	if (v * v == n)
+		return (v);
+	else if (v * v < n)
+		return (square(n, (v + 1)));
 	else
 		return (-1);
 }
