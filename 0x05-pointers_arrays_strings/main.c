@@ -3,15 +3,16 @@
 #include <string.h>
 
 int _putchar(char c);
-void print_rev(char *s);
+void rev_string(char *s);
 
 int main(void)
 {
-	char *str;
+char s[10] = "My School";
 
-    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-    print_rev(str);
-	return (0);
+    printf("%s\n", s);
+    rev_string(s);
+    printf("%s\n", s);
+    return (0);
 }
 
 int _putchar(char c)
@@ -19,18 +20,21 @@ int _putchar(char c)
 		return (write(1, &c, 1));
 }
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
-int l = 0;
-int i;
+	int l = 0;
+	int i;
+	char temp;
 
-while (s[l] != '\0')
-{
-	l++;
-}
-for (i = (l - 1); i >= 0; i--)
-{
-	_putchar(s[i]);
-}
-_putchar('\n');
+	if (s[l] != '\0')
+	{
+		l++;
+	}
+	for (i = 0; i < l; i++ )
+	{
+		l--;
+		temp = s[i];
+		s[i] = s[l];
+		s[l] = temp;
+	}
 }
