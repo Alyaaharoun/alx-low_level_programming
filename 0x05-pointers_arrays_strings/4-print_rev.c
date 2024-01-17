@@ -2,9 +2,9 @@
 
 /**
 * print_rev - function print reverse string
-* 
+*
 * @s: parameter of function
-* 
+*
 * Return: no return
 */
 
