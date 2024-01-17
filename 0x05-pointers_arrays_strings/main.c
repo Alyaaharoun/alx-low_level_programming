@@ -26,13 +26,13 @@ void rev_string(char *s)
 	int i;
 	char temp;
 
-	if (s[l] != '\0')
+	while (s[l] != '\0')
 	{
 		l++;
 	}
-	for (i = 0; i < l; i++ )
+	l--;
+	for (i = 0; i < l; i++, l--)
 	{
-		l--;
 		temp = s[i];
 		s[i] = s[l];
 		s[l] = temp;
