@@ -3,14 +3,18 @@
 #include <string.h>
 
 int _putchar(char c);
-void puts_half(char *str);
+void print_array(int *a, int n);
 
 int main(void)
 {
-char *str;
+int array[5];
 
-    str = "0123456789";
-    puts_half(str);
+    array[0] = 98;
+    array[1] = 402;
+    array[2] = -198;
+    array[3] = 298;
+    array[4] = -1024;
+    print_array(array, 5);
     return (0);
 }
 
@@ -19,29 +23,20 @@ int _putchar(char c)
 		return (write(1, &c, 1));
 }
 
-void puts_half(char *str)
+void print_array(int *a, int n)
 {
 	int i;
-	int l = 0;
-
-	while (str[l] != '\0')
+	
+	for (i = 0; i < n; i++)
 	{
-		l++;
-	}
-	if ((l - 1) % 2 == 0)
-	{
-		for (i = l / 2; i < l; i++)
+		if (i != n - 1)
 		{
-			_putchar(str[i]);
+			printf("%d, ", a[i]);
+		}
+		else
+		{
+			printf("%d", a[i]);
 		}
 	}
-	if ((l - 1) % 2 != 0)
-	{
-		int n = (l) / 2;
-		for (i = n; i < l; i++)
-		{
-			_putchar(str[i]);
-		}
-	}
-	_putchar('\n');
+	printf("\n");
 }
