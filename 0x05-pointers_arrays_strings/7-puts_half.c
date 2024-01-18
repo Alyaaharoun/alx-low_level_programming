@@ -1,23 +1,12 @@
 #include "main.h"
-#include <unistd.h>
-#include <string.h>
 
-int _putchar(char c);
-void puts_half(char *str);
-
-int main(void)
-{
-char *str;
-
-    str = "0123456789";
-    puts_half(str);
-    return (0);
-}
-
-int _putchar(char c)
-{
-		return (write(1, &c, 1));
-}
+/**
+ * puts_half - function that print half number
+ *
+ * @str: parameter of function
+ *
+ * Return: no return
+*/
 
 void puts_half(char *str)
 {
@@ -38,6 +27,7 @@ void puts_half(char *str)
 	if ((l - 1) % 2 != 0)
 	{
 		int n = (l) / 2;
+
 		for (i = n; i < l; i++)
 		{
 			_putchar(str[i]);
