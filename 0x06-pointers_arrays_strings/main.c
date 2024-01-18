@@ -31,13 +31,13 @@ char *_strcat(char *dest, char *src)
 	int destl = 0;
 	int srcl = 0;
 
-	for (i = 0; i != '\0'; i++)
-	{
-		destl++;
-	}
-	for (i = 0; i != '\0'; i++)
+	while (src[srcl] != '\0')
 	{
 		srcl++;
+	}
+	while (dest[destl] != '\0')
+	{
+		destl++;
 	}
 	for (i = 0; i <= srcl; i++)
 	{
