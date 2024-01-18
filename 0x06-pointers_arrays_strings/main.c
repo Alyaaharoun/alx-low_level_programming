@@ -3,25 +3,39 @@
 #include <string.h>
 
 int _putchar(char c);
-char *_strncat(char *dest, char *src, int n);
-
+char *_strncpy(char *dest, char *src, int n);
 int main(void)
 {
 	
-	char s1[98] = "Hello ";
-    char s2[] = "World!\n";
+	char s1[98];
     char *ptr;
+    int i;
 
+    for (i = 0; i < 98 - 1; i++)
+    {
+        s1[i] = '*';
+    }
+    s1[i] = '\0';
     printf("%s\n", s1);
-    printf("%s", s2);
-    ptr = _strncat(s1, s2, 1);
+    ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 5);
     printf("%s\n", s1);
-    printf("%s", s2);
     printf("%s\n", ptr);
-    ptr = _strncat(s1, s2, 1024);
+    ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 90);
     printf("%s", s1);
-    printf("%s", s2);
     printf("%s", ptr);
+    for (i = 0; i < 98; i++)
+    {
+        if (i % 10)
+        {
+            printf(" ");
+        }
+        if (!(i % 10) && i)
+        {
+            printf("\n");
+        }
+        printf("0x%02x", s1[i]);
+    }
+    printf("\n");
     return (0);
 }
 
@@ -30,24 +44,18 @@ int _putchar(char c)
 		return (write(1, &c, 1));
 }
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int destl = 0;
-	int srcl = 0;
 	int i;
 
-	while (dest[destl] != '\0')
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
-		destl++;
+		dest[i] = src[i];
 	}
-	while (src[srcl] != '\0')
+	while (i < n)
 	{
-		srcl++;
+		dest[i] = '\0';
+		i++;
 	}
-	for(i = 0; i < n && src[i] != '\0'; i++)
-	{
-		dest[destl + i] = src[i];
-	}
-	dest[destl + i] = '\0';
 	return (dest);
 }
