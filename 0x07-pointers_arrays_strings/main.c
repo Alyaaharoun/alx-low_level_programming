@@ -3,21 +3,17 @@
 #include <string.h>
 
 int _putchar(char c);
-char *_strchr(char *s, char c);
-
+unsigned int _strspn(char *s, char *accept);
 
 
 int main(void)
 {
-char *s = "hello";
-    char *f;
+char *s = "hello, world";
+    char *f = "oleh";
+    unsigned int n;
 
-    f = _strchr(s, 'l');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    n = _strspn(s, f);
+    printf("%u\n", n);
     return (0);
 }
 
@@ -25,19 +21,19 @@ int _putchar(char c)
 {
 		return (write(1, &c, 1));
 }
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	while (*s != '\0')
+	int i, j;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (*s == c)
+		for (j = 0; s[i] != accept[j]; j++)
 		{
-			return (s);
+			if (accept[j] == '\0')
+			{
+				return (i);
+			}
 		}
-		s++;
 	}
-	if (*s == c)
-	{
-		return (s);
-	}
-	return (NULL);
+	return (0);
 }
