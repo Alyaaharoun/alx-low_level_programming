@@ -3,16 +3,21 @@
 #include <string.h>
 
 int _putchar(char c);
-char *_strstr(char *haystack, char *needle);
+void print_chessboard(char (*a)[8]);
 
 int main(void)
 {
-char *s = "hello, world";
-    char *f = "world";
-    char *t;
-
-    t = _strstr(s, f);
-    printf("%s\n", t);
+char board[8][8] = {
+        {'r', 'k', 'b', 'q', 'k', 'b', 'k', 'r'},
+        {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
+        {'R', 'K', 'B', 'Q', 'K', 'B', 'K', 'R'},
+    };
+    print_chessboard(board);
     return (0);
 }
 
@@ -20,27 +25,16 @@ int _putchar(char c)
 {
 		return (write(1, &c, 1));
 }
-char *_strstr(char *haystack, char *needle)
+void print_chessboard(char (*a)[8])
 {
-	if (*needle == '\0') 
-	{
-        return haystack;
-    }
-    while (*haystack != '\0')
-	{
-        char *h = haystack;
-        char *n = needle;
+	int i, j;
 
-        while (*n != '\0' && *h == *n) {
-            h++;
-            n++;
-        }
-        if (*n == '\0')
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
 		{
-            return haystack; // Found the substring
-        }
-        haystack++;
-    }
-
-    return NULL;
+			_putchar(a[i][j]);
+		}
+		_putchar('\n');
+	}
 }
