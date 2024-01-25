@@ -13,10 +13,9 @@ int main(int argc, char *argv[])
 {
 	int mul, a, b;
 
-	mul = a * b;
 	a = atoi(argv[1]);
 	b = atoi(argv[2]);
-
+	mul = a * b;
 if (argc == 3)
 {
 	printf("%d\n", mul);

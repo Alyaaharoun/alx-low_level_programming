@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int atoi(const char *s);
+int atoi(char *s);
 int main(int argc, char *argv[])
 {
 	int mul, a, b;
@@ -20,4 +20,21 @@ else if (argc != 3)
 	return (1);
 }
 return (0);
+}
+int atoi(char *s)
+{
+	int res = 0;
+	int sign = 1;
+	int i = 0;
+
+	if (s[0] = '-')
+	{
+		sign = -1;
+		i++;
+	}
+	for (; i != '\0'; i++)
+	{
+		res = res * 10 + s[i] - '\0';
+	}
+	return (res * sign);
 }
