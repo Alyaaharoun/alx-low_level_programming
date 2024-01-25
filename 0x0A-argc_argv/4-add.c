@@ -13,19 +13,21 @@ int main(int argc, char *argv[])
 {
 int i;
 int add = 0;
+int n;
 
 if (argc == 1)
 {
 	printf("0\n");
 }
-if (argv[1] == '-')
+if ()
 {
 	printf("Error\n");
 	return (1);
 }
+n = atoi(argv[i]);
 for (i = 1; i != '\0'; i++)
 {
-	add = add + atoi(argv[i]);
+	add = add + n;
 }
 printf("%d\n", add);
 return (0);
