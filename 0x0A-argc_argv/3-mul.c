@@ -20,7 +20,7 @@ if (argc == 3)
 {
 	printf("%d\n", mul);
 }
-else if (argc != 3)
+else if (argc > 3 || argc < 3)
 {
 	printf("Error\n");
 	return (1);
