@@ -1,11 +1,18 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
-int atoi(const char *s);
+/**
+ * main - function to multiply two numbers
+ * @argc: first parameter
+ * @argv: second parameter
+ * Return: always 0(success)
+*/
+
 int main(int argc, char *argv[])
 {
 	int mul, a, b;
+
 	mul = a * b;
 	a = atoi(argv[1]);
 	b = atoi(argv[2]);
