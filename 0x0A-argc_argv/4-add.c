@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 
 /**
  * main - function to add numbers
@@ -25,7 +25,7 @@ if (argv[1] == '-')
 }
 for (i = 1; i != '\0'; i++)
 {
-	add = add + argv[i];
+	add = add + atoi(argv[i]);
 }
 printf("%d\n", add);
 return (0);
