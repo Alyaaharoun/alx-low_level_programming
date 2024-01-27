@@ -11,42 +11,21 @@
 */
 
 int _putchar(char c);
-char *create_array(unsigned int size, char c);
-
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-	unsigned int i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (i % 10)
-		{
-			printf(" ");
-		}
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", buffer[i]);
-		i++;
-	}
-	printf("\n");
-}
+char *_strdup(char *str);
 
 int main(int argc, char *argv[])
 {
-	char *buffer;
+	char *s;
 
-	buffer = create_array(98, 'H');
-	if  (buffer == NULL)
-	{
-		printf("failed to allocate memory\n");
-		return (1);
-	}
-	simple_print_buffer(buffer, 98);
-	free(buffer);
-	return (0);
+    s = _strdup("ALX SE");
+    if (s == NULL)
+    {
+        printf("failed to allocate memory\n");
+        return (1);
+    }
+    printf("%s\n", s);
+    free(s);
+    return (0);
 }
 
 int _putchar(char c)
@@ -54,19 +33,28 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-char *create_array(unsigned int size, char c)
+char *_strdup(char *str)
 {
-	unsigned int i;
-	char *ptr;
+	char *s;
+	int len = 0;
+	int i;
 
-	ptr = malloc(size * sizeof(char));
-	if (size == 0 || ptr == NULL)
+if (str == NULL)
+{
+	return (NULL);
+}
+while (str[len] != '\0')
+{
+	len++;
+}
+	s = malloc( (len + 1) * sizeof(char));
+	if (s == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < size; i++)
+	for (i = 0; str[i]; i++)
 	{
-		ptr[i] = c;
+		s[i] = str[i];
 	}
-	return (ptr);
+	return (s);
 }
