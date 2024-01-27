@@ -56,15 +56,11 @@ int _putchar(char c)
 
 char *create_array(unsigned int size, char c)
 {
-	if (size = 0)
-	{
-		return (NULL);
-	}
-
 	unsigned int i;
-	char *ptr = (char*) malloc(size * sizeof(char));
+	char *ptr;
 
-	if (ptr == NULL)
+	ptr = malloc(size * sizeof(char));
+	if (size == 0 || ptr == NULL)
 	{
 		return (NULL);
 	}
