@@ -11,20 +11,40 @@
 */
 
 int _putchar(char c);
-char *str_concat(char *s1, char *s2);
+int **alloc_grid(int width, int height);
 
+void print_grid(int **grid, int width, int height)
+{
+    int w;
+    int h;
+
+    h = 0;
+    while (h < height)
+    {
+        w = 0;
+        while (w < width)
+        {
+            printf("%d ", grid[h][w]);
+            w++;
+        }
+        printf("\n");
+        h++;
+    }   
+}
 int main(int argc, char *argv[])
 {
-char *s;
+int **grid;
 
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
+    grid = alloc_grid(6, 4);
+    if (grid == NULL)
     {
-        printf("failed\n");
         return (1);
     }
-    printf("%s\n", s);
-    free(s);
+    print_grid(grid, 6, 4);
+    printf("\n");
+    grid[0][3] = 98;
+    grid[3][4] = 402;
+    print_grid(grid, 6, 4);
     return (0);
 }
 
@@ -33,47 +53,32 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
-	int i;
-	int j;
-	char *s;
-	int l1;
-	int l2;
-	int l;
+    int i, j;
+	int **array;
+    int t = width * height;
 
-l1 = l2 = 0;
-if (s1 != NULL)
-	{
-		i = 0;
-		while (s1[i++] != '\0')
-		{
-			l1++;
-		}
-	}
-	if (s2 != NULL)
-	{
-		i = 0;
-		while (s2[i++] != '\0')
-		{
-			l2++;
-		}
-	}
-	l = l1 + l2;
-	s = (char*) malloc(sizeof(char) * (l + 1));
-	if (s == NULL)
-	{
-		return (NULL);
-	}
-	for (i = 0; i < l1; i++)
-	{
-		s[i] = s1[i];
-	}
-	for (j = 0; j < l2; j++, i++)
-	{
-		s[i] = s2[j];
-	}
-	s[l] = '\0';
-	return (s);
-
+    if (t <= 0)
+        return (NULL);
+    array =(int **) malloc(sizeof(int *) * height);
+    if (array == NULL)
+        return (NULL);
+    for (i = 0; i < height; i++)
+    {
+        array[i] =(int *)malloc(sizeof(int) * width);
+        if (array[i] == NULL)
+        {
+            for (i--; i >= 0; i--)
+                free(array[i]);
+            free(array);
+            return(NULL);
+        }
+    }
+    for (i =0; i < height; i++)
+    {
+        for (j = 0; j < width; j++)
+            array[i][j] = 0;
+    }
+    return (array);
 }
