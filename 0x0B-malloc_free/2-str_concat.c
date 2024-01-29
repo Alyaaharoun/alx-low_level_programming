@@ -1,37 +1,11 @@
-#include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
-#include <unistd.h>
 
 /**
- * main - function to multiply two numbers
- * @argc: first parameter
- * @argv: second parameter
+ * str_concat - function to print 2 string
+ * @s1: first parameter
+ * @s2: second parameter
  * Return: always 0(success)
 */
-
-int _putchar(char c);
-char *str_concat(char *s1, char *s2);
-
-int main(int argc, char *argv[])
-{
-char *s;
-
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
-    {
-        printf("failed\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
-}
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 char *str_concat(char *s1, char *s2)
 {
