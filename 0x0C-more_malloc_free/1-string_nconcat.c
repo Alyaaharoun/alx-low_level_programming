@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
  * string_nconcat - function to print two string
  * @s1: first parameter
