@@ -16,7 +16,6 @@ unsigned int l1;
 unsigned int l2;
 unsigned int i;
 unsigned int j;
-unsigned int l;
 char *array;
 
 if (s1 != NULL)
@@ -37,8 +36,7 @@ else
 	s2 = "";
 if (l2 > n)
 	n = l2;
-l = l1 + n;
-array = malloc(sizeof(char) * (l + 1));
+array = malloc(sizeof(char) * (l1 + n + 1));
 if (array == NULL)
 	return (NULL);
 for (i = 0; i < l1; i++)
@@ -49,6 +47,6 @@ for (j = 0; j < n; j++, i++)
 {
 	array[i] = s2[j];
 }
-array[l] = '\0';
+array[l1 + n] = '\0';
 return (array);
 }
