@@ -25,16 +25,20 @@ if (s1 != NULL)
 	while (s1[i++] != '\0')
 		l1++;
 }
+else
+	s1 = "";
 if (s2 != NULL)
 {
 	i = 0;
 	while (s2[i++] != '\0')
 		l2++;
 }
+else
+	s2 = "";
 if (n >= l2)
 	n = l2;
 l = l1 + n;
-array = (char *)malloc(sizeof(char) * (l + 1));
+array = malloc(sizeof(char) * (l + 1));
 if (array == NULL)
 	return (NULL);
 for (i = 0; i < l1; i++)
