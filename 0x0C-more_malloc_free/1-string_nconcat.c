@@ -35,7 +35,7 @@ if (s2 != NULL)
 }
 else
 	s2 = "";
-if (n >= l2)
+if (l2 > n)
 	n = l2;
 l = l1 + n;
 array = malloc(sizeof(char) * (l + 1));
