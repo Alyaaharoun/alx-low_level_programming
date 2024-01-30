@@ -12,27 +12,16 @@
 */
 
 int _putchar(char c);
-void *malloc_checked(unsigned int b);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
 
 int main(int argc, char *argv[])
 {
 char *c;
-    int *i;
-    float *f;
-    double *d;
+    char *concat;
 
-    c = malloc_checked(sizeof(char) * 1024);
-    printf("%p\n", (void *)c);
-    i = malloc_checked(sizeof(int) * 402);
-    printf("%p\n", (void *)i);
-    f = malloc_checked(sizeof(float) * 100000000);
-    printf("%p\n", (void *)f);
-    d = malloc_checked(INT_MAX);
-    printf("%p\n", (void *)d);
-    free(c);
-    free(i);
-    free(f);
-    free(d);
+    concat = string_nconcat("Best ", "School !!!", 6);
+    printf("%s\n", concat);
+    free(concat);
     return (0);
 }
 
@@ -41,11 +30,41 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-void *malloc_checked(unsigned int b)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-    void *ptr;
-    ptr = malloc(b);
-    if (ptr == NULL)
-        exit(98);
-    return (ptr);
+int l1;
+int l2;
+int i;
+int j;
+int l;
+char *array;
+
+if (s1 != NULL)
+{
+    i = 0;
+    while (s1[i++] != '\0')
+        l1++;
+}
+if (s2 != NULL)
+{
+    i = 0;
+    while (s2[i++] != '\0')
+        l2++;
+}
+if (n >= l2)
+    n = l2;
+l = l1 + n;
+array = (char *)malloc(sizeof(char) * (l + 1));
+if (array == NULL)
+    return (NULL);
+for (i = 0; i < l1; i++)
+{
+    array[i] = s1[i];
+}
+for (j = 0; j < n; j++, i++)
+{
+    array[i] = s2[j];
+}
+array[l] = '\0';
+return (array);
 }
