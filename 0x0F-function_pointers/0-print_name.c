@@ -4,11 +4,11 @@
 /**
  * print_name - function to print string
  * @name: first parameter
- * f - function to apointer
+ * @f: function to apointer
  * Return: no return
 */
 
 void print_name(char *name, void (*f)(char *))
 {
-    f(name);
+	f(name);
 }
